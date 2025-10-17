@@ -1,4 +1,4 @@
-/* 💎 NEXT LEVEL NAVBAR */
+
 .navbar {
   position: sticky;
   top: 0;
@@ -15,7 +15,7 @@
   transition: all 0.4s ease-in-out;
 }
 
-/* ✨ LOGO */
+
 .logo {
   font-size: 2rem;
   font-weight: 700;
@@ -32,7 +32,7 @@
   transform: scale(1.05);
 }
 
-/* 🧭 NAV LINKS */
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -40,7 +40,6 @@
   position: relative;
 }
 
-/* Modern buttons */
 .nav-links button {
   background: none;
   border: none;
@@ -55,7 +54,6 @@
   text-transform: capitalize;
 }
 
-/* Button hover effect — glowing underline */
 .nav-links button::after {
   content: '';
   position: absolute;
@@ -77,7 +75,6 @@
   transform: translateY(-2px);
 }
 
-/* Active link indicator (optional if you handle route active) */
 .nav-links button.active {
   color: #4cc9f0;
 }
@@ -85,7 +82,7 @@
   width: 100%;
 }
 
-/* 🌙 Glass floating effect with dark overlay */
+
 .navbar::before {
   content: '';
   position: absolute;
@@ -95,7 +92,7 @@
   border-radius: 0 0 20px 20px;
 }
 
-/* 🪄 Optional floating animation when scrolling */
+
 .navbar.scrolled {
   background: rgba(30, 30, 50, 0.6);
   backdrop-filter: blur(30px);
@@ -103,7 +100,6 @@
   transition: all 0.4s ease;
 }
 
-/* 🌈 RESPONSIVE DESIGN */
 @media (max-width: 900px) {
   .navbar {
     padding: 1rem 2rem;
@@ -117,7 +113,7 @@
     font-size: 1.6rem;
   }
 }
-/* ====== APPLIED JOBS PAGE ====== */
+
 .applied-page {
   max-width: 1100px;
   margin: 2rem auto;
@@ -133,14 +129,13 @@
   margin-bottom: 2rem;
 }
 
-/* ====== LIST CONTAINER ====== */
 .applied-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.5rem;
 }
 
-/* ====== CARD ====== */
+
 .applied-card {
   background: #fff;
   border-radius: 12px;
@@ -163,7 +158,7 @@
   color: #333;
 }
 
-/* ====== STATUS STYLES ====== */
+
 .applied-card .status {
   font-weight: 600;
   padding: 0.3rem 0.7rem;
