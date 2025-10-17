@@ -24,7 +24,6 @@ export class NotificationsComponent implements OnInit{
   ngOnInit() {
     this.user = JSON.parse(localStorage.getItem('user')!);
     this.http.get<any>(`https://jobfile.onrender.com/users/${this.user.id}`).subscribe(u => {
-      // Prefer user notifications from DB; if none, use default
       this.notifications = (u.notifications && u.notifications.length > 0)
         ? (u.notifications || []).sort((a: any, b: any) => Number(b.read) - Number(a.read))
         : this.notifications;

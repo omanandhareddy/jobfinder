@@ -41,7 +41,6 @@ export class ManageJobsComponent {
   }
 
   edit(job: any) {
-    // To edit, pass job id via navigation state or route param — we'll use state
     this.router.navigate(['/post-job'], { state: { editJob: job } });
   }
 

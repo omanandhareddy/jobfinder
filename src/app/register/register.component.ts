@@ -44,4 +44,7 @@ export class RegisterComponent {
       this.router.navigate(['/login']);
     });
   }
+  toLogin(){
+    this.router.navigate(['/login'])
+  }
 }

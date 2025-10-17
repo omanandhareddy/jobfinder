@@ -74,7 +74,7 @@ form: Partial<Job> = {
 
     const created = await firstValueFrom(this.jobSvc.createJob(newJob));
 
-    // Notify all candidates about new job
+    
     const note = { id: '' + Date.now(), text: `New Job: ${newJob.title} at ${newJob.companyName}`, date: new Date().toISOString(), read: false };
     await this.userSvc.pushNotificationToAllCandidates(note);
 

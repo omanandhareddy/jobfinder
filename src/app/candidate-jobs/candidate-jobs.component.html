@@ -31,7 +31,6 @@
   </div>
 </div>
 
-<!-- Application Modal -->
 <div class="modal-overlay" *ngIf="showModal" (click)="closeModal()">
   <div class="modal-content" (click)="$event.stopPropagation()">
     <h3>Apply for {{ selectedJob?.title }}</h3>
