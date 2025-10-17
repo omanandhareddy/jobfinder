@@ -11,14 +11,19 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent {
- form = {
+  form = {
     name: '',
     email: '',
     password: '',
-    role: 'candidate'
+    role: ''
   };
 
   constructor(private auth: AuthService, private router: Router) {}
+
+  ngOnInit() {
+    // get selected role from mutual home
+    this.form.role = localStorage.getItem('selectedRole') || 'candidate';
+  }
 
   register() {
     if (!this.form.name || !this.form.email || !this.form.password) {
@@ -35,7 +40,7 @@ export class RegisterComponent {
     };
 
     this.auth.registerUser(newUser).subscribe(() => {
-      alert('Registration successful!');
+      alert(`Registration successful as ${this.form.role}!`);
       this.router.navigate(['/login']);
     });
   }

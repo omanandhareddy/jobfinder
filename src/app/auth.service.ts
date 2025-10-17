@@ -11,27 +11,26 @@ export class AuthService {
 
   constructor(private http: HttpClient, private router: Router) {}
 
-  // Register a new user
+ 
   registerUser(data: any): Observable<any> {
     return this.http.post(this.api, data);
   }
 
-  // Get all users (for login validation)
   getUsers(): Observable<any> {
     return this.http.get(this.api);
   }
 
-  // Save logged-in user to localStorage
+  
   saveUser(user: any) {
     localStorage.setItem('user', JSON.stringify(user));
   }
 
-  // Get current logged-in user
+
   getUser() {
     return JSON.parse(localStorage.getItem('user') || '{}');
   }
 
-  // Logout
+ 
   logout() {
     localStorage.removeItem('user');
     this.router.navigate(['/login']);

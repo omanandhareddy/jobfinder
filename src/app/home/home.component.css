@@ -1,0 +1,52 @@
+.mutual-home {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #ff9966, #ff5e62);
+  color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
+button {
+  background: white;
+  color: #ff5e62;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: #222;
+  color: white;
+}
+
+.banner {
+  margin-top: 40px;
+  width: 80%;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}

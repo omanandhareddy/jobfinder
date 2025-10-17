@@ -29,7 +29,7 @@ export interface Job {
 export interface NotificationItem {
   id?: string;
   text: string;
-  date: string; // ISO
+  date: string; 
   read?: boolean;
 }
 
