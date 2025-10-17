@@ -1,0 +1,22 @@
+<nav class="navbar">
+  <div class="logo" (click)="goTo('candidate-home')">JobFinder</div>
+  <div class="nav-links">
+    <button (click)="goTo('candidate-dashboard')">Dashboard</button>
+    <button (click)="goTo('candidate-jobs')">Find Jobs</button>
+    <button (click)="goTo('applied-jobs')">Applied Jobs</button>
+    <button (click)="goTo('notifications')">Notifications</button>
+  </div>
+</nav>
+
+
+<div class="noti-page">
+  <h2>Notifications</h2>
+  <ul>
+    <li *ngFor="let n of notifications" [ngClass]="{ 'new': n.isNew }">
+      <span>{{ n.text }}</span>
+      <small>{{ n.date | date:'short' }}</small>
+    </li>
+  </ul>
+</div>
+
+

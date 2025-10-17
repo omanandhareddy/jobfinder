@@ -1,0 +1,22 @@
+<nav class="navbar">
+  <div class="logo" (click)="goTo('candidate-home')">JobFinder</div>
+  <div class="nav-links">
+    <button (click)="goTo('candidate-dashboard')">Dashboard</button>
+    <button (click)="goTo('candidate-jobs')">Find Jobs</button>
+    <button (click)="goTo('applied-jobs')">Applied Jobs</button>
+    <button (click)="goTo('notifications')">Notifications</button>
+  </div>
+</nav>
+
+
+<div class="applied-page">
+  <h2>My Applied Jobs</h2>
+<div class="applied-list">
+  <div *ngFor="let app of applications" class="applied-card" [ngClass]="app.status.toLowerCase()">
+    <p><b>Job ID:</b> {{ app.jobId }}</p>
+    <p><b>Status:</b> <span class="status" [ngClass]="app.status.toLowerCase()">{{ app.status }}</span></p>
+    <p><b>Applied Date:</b> {{ app.appliedDate }}</p>
+  </div>
+</div>
+
+</div>

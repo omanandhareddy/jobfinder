@@ -1,0 +1,29 @@
+ <nav class="navbar">
+      <div class="logo" (click)="go('employer-home')">JobFinder</div>
+      <div class="nav-links">
+        <button (click)="go('manage-jobs')">Manage Jobs</button>
+        <button (click)="go('applications')">Applications</button>
+        <button (click)="go('analytics')">Analytics</button>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h2>{{ editing ? 'Edit Job' : 'Post New Job' }}</h2>
+      <form (ngSubmit)="submit()" #jobForm="ngForm" class="job-form">
+        <input [(ngModel)]="form.title" name="title" placeholder="Job Title *" required />
+        <input [(ngModel)]="form.companyName" name="companyName" placeholder="Company Name *" required />
+        <input [(ngModel)]="form.location" name="location" placeholder="Location *" required />
+        <select [(ngModel)]="form.experience" name="experience">
+          <option value="0-2 years">0-2 years</option>
+          <option value="2-5 years">2-5 years</option>
+          <option value="5+ years">5+ years</option>
+        </select>
+        <input [(ngModel)]="form.salary" name="salary" placeholder="Salary Range (e.g. 5-8 LPA)" />
+        <textarea [(ngModel)]="form.description" name="description" placeholder="Job Description"></textarea>
+
+        <div class="actions">
+          <button type="submit">{{ editing ? 'Update Job' : 'Create Job' }}</button>
+          <button type="button" (click)="cancel()">Cancel</button>
+        </div>
+      </form>
+    </div>

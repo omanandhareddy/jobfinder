@@ -1,0 +1,56 @@
+<nav class="navbar">
+  <div class="logo" (click)="go('employer-home')">JobFinder (Employer)</div>
+  <div class="nav-links">
+    <button (click)="go('post-job')">Post Job</button>
+    <button (click)="go('manage-jobs')">Manage Jobs</button>
+    <button (click)="go('applications')">Applications</button>
+    <button (click)="go('analytics')">Analytics</button>
+    <button (click)="logout()">Logout</button>
+  </div>
+</nav>
+
+<section class="employer-hero">
+  <div class="hero-content">
+    <h1>Welcome</h1>
+    <p>
+      Simplify your hiring process with JobFinder — where top talent meets opportunity.  
+      Post openings, manage candidates, and track performance insights, all in one intuitive dashboard.
+    </p>
+    <div class="quick-actions">
+      <button (click)="go('post-job')">➕ Post a New Job</button>
+      <button (click)="go('manage-jobs')">📋 Manage Listings</button>
+    </div>
+  </div>
+</section>
+
+<section class="info-grid">
+  <div class="info-card">
+    <h3>🚀 Smart Hiring Tools</h3>
+    <p>
+      Automate resume screening and manage candidate pipelines efficiently.  
+      Reduce hiring time by up to 40% with intelligent tools designed for speed and accuracy.
+    </p>
+  </div>
+
+  <div class="info-card">
+    <h3>📈 Analytics That Matter</h3>
+    <p>
+      Track real-time metrics like job views, application sources, and response rates.  
+      Gain insights into which roles attract the most qualified candidates.
+    </p>
+  </div>
+
+  <div class="info-card">
+    <h3>🌍 Employer Reach</h3>
+    <p>
+      Join over 10,000 recruiters using JobFinder to connect with 1M+ job seekers.  
+      Build your employer brand with verified profiles and transparent hiring practices.
+    </p>
+  </div>
+</section>
+
+<section class="cta-section">
+  <h2>Start Building Your Dream Team Today</h2>
+  <p>Take control of your hiring with JobFinder’s AI-powered recruitment suite.</p>
+  <button class="cta-btn" (click)="go('post-job')">✨ Post Your First Job</button>
+</section>

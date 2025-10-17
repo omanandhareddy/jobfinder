@@ -1,0 +1,99 @@
+<nav class="navbar">
+  <div class="logo" (click)="go('employer-home')">JobFinder</div>
+  <div class="nav-links">
+    <button (click)="go('post-job')">Post Job</button>
+    <button (click)="go('manage-jobs')">Manage Jobs</button>
+    <button (click)="go('analytics')">Analytics</button>
+  </div>
+</nav>
+
+<div class="container">
+  <h2>Applications</h2>
+  <table class="apps-table">
+    <thead>
+      <tr>
+        <th>Candidate</th>
+        <th>Job</th>
+        <th>Phone</th>
+        <th>Resume</th>
+        <th>Applied</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let a of applications">
+        <td>
+          {{ a.candidateName }} 
+          <div class="small">{{ a.email }}</div>
+        </td>
+        <td>{{ jobsMap[a.jobId]?.title }}</td>
+        <td>{{ a.phone || 'N/A' }}</td>
+        <td>{{ a.resumeFileName || 'N/A' }}</td>
+        <td>{{ a.appliedDate | date:'short' }}</td>
+        <td>{{ a.status }}</td>
+        <td>
+          <button class="btn-view" (click)="viewDetails(a)">View</button>
+          <select (change)="changeStatus(a, $any($event.target).value)" [value]="a.status">
+            <option>Applied</option>
+            <option>Reviewed</option>
+            <option>Rejected</option>
+          </select>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Details Modal -->
+<div class="modal-overlay" *ngIf="showDetailsModal" (click)="closeDetailsModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <h3>Application Details</h3>
+    
+    <div class="detail-section">
+      <div class="detail-item">
+        <label>Job Title:</label>
+        <p>{{ jobsMap[selectedApplication?.jobId]?.title }}</p>
+      </div>
+
+      <div class="detail-item">
+        <label>Candidate Name:</label>
+        <p>{{ selectedApplication?.candidateName }}</p>
+      </div>
+
+      <div class="detail-item">
+        <label>Email Address:</label>
+        <p>{{ selectedApplication?.email }}</p>
+      </div>
+
+      <div class="detail-item">
+        <label>Phone Number:</label>
+        <p>{{ selectedApplication?.phone || 'Not provided' }}</p>
+      </div>
+
+      <div class="detail-item">
+        <label>Resume:</label>
+        <p>{{ selectedApplication?.resumeFileName || 'Not uploaded' }}</p>
+      </div>
+
+      <div class="detail-item">
+        <label>Cover Letter:</label>
+        <p class="cover-letter">{{ selectedApplication?.coverLetter || 'No cover letter provided' }}</p>
+      </div>
+
+      <div class="detail-item">
+        <label>Applied Date:</label>
+        <p>{{ selectedApplication?.appliedDate | date:'medium' }}</p>
+      </div>
+
+      <div class="detail-item">
+        <label>Status:</label>
+        <p><span class="status-badge">{{ selectedApplication?.status }}</span></p>
+      </div>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn-close" (click)="closeDetailsModal()">Close</button>
+    </div>
+  </div>
+</div>

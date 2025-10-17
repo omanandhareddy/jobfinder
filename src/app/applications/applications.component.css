@@ -1,0 +1,334 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f9fafc;
+  color: #1e1e1e;
+}
+/* 💎 NEXT LEVEL NAVBAR */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease-in-out;
+}
+
+/* ✨ LOGO */
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #3f37c9, #4361ee, #4895ef);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* 🧭 NAV LINKS */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+}
+
+/* Modern buttons */
+.nav-links button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.05rem;
+  position: relative;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.4s ease;
+  padding: 0.4rem 0;
+  text-transform: capitalize;
+}
+
+/* Button hover effect — glowing underline */
+.nav-links button::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #4361ee, #4cc9f0);
+  border-radius: 5px;
+  transition: width 0.4s ease;
+}
+
+.nav-links button:hover::after {
+  width: 100%;
+}
+
+.nav-links button:hover {
+  color: #4cc9f0;
+  transform: translateY(-2px);
+}
+
+/* Active link indicator (optional if you handle route active) */
+.nav-links button.active {
+  color: #4cc9f0;
+}
+.nav-links button.active::after {
+  width: 100%;
+}
+
+/* 🌙 Glass floating effect with dark overlay */
+.navbar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: -1;
+  border-radius: 0 0 20px 20px;
+}
+
+/* 🪄 Optional floating animation when scrolling */
+.navbar.scrolled {
+  background: rgba(30, 30, 50, 0.6);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 5px 30px rgba(67, 97, 238, 0.25);
+  transition: all 0.4s ease;
+}
+
+/* 🌈 RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+  .navbar {
+    padding: 1rem 2rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .logo {
+    font-size: 1.6rem;
+  }
+}
+/* 🔥 Premium & Unified Styling with Previous Dashboard Theme */
+
+:root {
+  --primary-color: #5d5fef;
+  --secondary-color: #f5f7ff;
+  --text-dark: #1f1f1f;
+  --text-light: #6f6f6f;
+  --card-bg: #ffffff;
+  --border-color: #e0e3f1;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+}
+
+/* 🌟 Navbar stays as from previous version */
+
+/* 🧭 Container Layout */
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px var(--shadow-color);
+  transition: 0.3s ease;
+}
+
+.container:hover {
+  box-shadow: 0 6px 22px var(--shadow-color);
+}
+
+.container h2 {
+  margin-bottom: 25px;
+  font-size: 26px;
+  color: var(--primary-color);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+/* 🧾 Applications Table */
+.apps-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.apps-table th {
+  background: var(--secondary-color);
+  color: var(--text-dark);
+  font-weight: 600;
+  text-align: left;
+  padding: 14px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.apps-table td {
+  background: var(--card-bg);
+  padding: 14px;
+  border-radius: 10px;
+  color: var(--text-dark);
+  vertical-align: middle;
+  box-shadow: 0 2px 5px var(--shadow-color);
+}
+
+.apps-table tr {
+  transition: 0.25s ease;
+}
+
+.apps-table tr:hover td {
+  background: #f7f8ff;
+  transform: scale(1.01);
+}
+
+/* 💼 Buttons and Selects */
+button,
+select {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  outline: none;
+}
+
+.btn-view {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: 0.3s ease;
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.btn-view:hover {
+  background: #4749d8;
+}
+
+select {
+  padding: 7px 10px;
+  border-radius: 8px;
+  background: var(--secondary-color);
+  color: var(--text-dark);
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+select:hover {
+  background: #e9ebff;
+}
+
+/* 📄 Candidate Info */
+.small {
+  font-size: 13px;
+  color: var(--text-light);
+}
+
+/* 🪟 Modal Styling */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 16px;
+  width: 480px;
+  box-shadow: 0 6px 25px var(--shadow-color);
+  animation: slideUp 0.35s ease;
+}
+
+.modal-content h3 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.detail-section {
+  display: grid;
+  gap: 15px;
+}
+
+.detail-item label {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.detail-item p {
+  margin-top: 5px;
+  color: var(--text-light);
+  background: var(--secondary-color);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.cover-letter {
+  max-height: 120px;
+  overflow-y: auto;
+  white-space: pre-line;
+}
+
+/* 🟢 Status Badge */
+.status-badge {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* 🔘 Modal Buttons */
+.modal-actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-close {
+  background: #f44336;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+
+.btn-close:hover {
+  background: #d32f2f;
+}
+
+/* ✨ Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(40px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}

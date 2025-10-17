@@ -1,0 +1,44 @@
+<nav class="navbar">
+  <div class="logo" (click)="go('employer-home')">JobFinder</div>
+  <div class="nav-links">
+    <button (click)="go('post-job')">Post Job</button>
+    <button (click)="go('applications')">Applications</button>
+    <button (click)="go('analytics')">Analytics</button>
+  </div>
+</nav>
+
+<div class="container">
+  <h2>Manage Jobs</h2>
+
+  <div class="controls">
+    <input placeholder="Search by title..." [(ngModel)]="search" (input)="filter()" />
+    <select [(ngModel)]="filterExp" (change)="filter()">
+      <option value="">All Experience</option>
+      <option value="0-2 years">0-2 years</option>
+      <option value="2-5 years">2-5 years</option>
+      <option value="5+ years">5+ years</option>
+    </select>
+    <select [(ngModel)]="sortBy" (change)="filter()">
+      <option value="newest">Newest</option>
+      <option value="oldest">Oldest</option>
+    </select>
+  </div>
+
+  <div class="jobs-grid">
+    <div class="job-card" *ngFor="let j of displayed">
+      <div class="job-header">
+        <h3>{{ j.title }}</h3>
+        <span class="badge">{{ j.experience }}</span>
+      </div>
+      <p class="company">{{ j.companyName }}</p>
+      <p class="location"><i class="fa-solid fa-location-dot"></i> {{ j.location }}</p>
+      <p class="salary"><i class="fa-solid fa-coins"></i> {{ j.salary }}</p>
+      <p class="date">Posted: {{ j.postedDate | date:'shortDate' }}</p>
+
+      <div class="actions">
+        <button class="edit" (click)="edit(j)">Edit</button>
+        <button class="delete" (click)="del(j)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

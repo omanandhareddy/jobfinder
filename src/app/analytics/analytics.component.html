@@ -1,0 +1,49 @@
+    <nav class="navbar">
+      <div class="logo" (click)="go('employer-home')">JobFinder</div>
+      <div class="nav-links">
+        <button (click)="go('post-job')">Post Job</button>
+        <button (click)="go('manage-jobs')">Manage Jobs</button>
+        <button (click)="go('applications')">Applications</button>
+      </div>
+    </nav>
+
+<div class="container">
+  <h2>Analytics</h2>
+  <p class="info-text">
+    Here you can track the performance of your job postings, see how many candidates applied, reviewed, or were rejected, and understand your recruitment trends.
+  </p>
+
+  <!-- Stats Cards -->
+<div class="cards">
+  <div class="card gradient1">
+    <h3>Total Jobs</h3>
+    <p>{{ totalJobs }}</p>
+  </div>
+  <div class="card gradient2">
+    <h3>Total Applications</h3>
+    <p>{{ totalApplications }}</p>
+  </div>
+  <div class="card gradient3">
+    <h3>Applied</h3>
+    <p>{{ breakdown.Applied || 0 }}</p>
+  </div>
+  <div class="card gradient4">
+    <h3>Reviewed</h3>
+    <p>{{ breakdown.Reviewed || 0 }}</p>
+  </div>
+  <div class="card gradient5">
+    <h3>Rejected</h3>
+    <p>{{ breakdown.Rejected || 0 }}</p>
+  </div>
+</div>
+
+
+  <!-- Extra Analytics Info -->
+  <div class="analytics-info">
+    <h3>Recruitment Insights</h3>
+    <p>
+      Track the number of applications received per job, monitor candidate engagement, and analyze which job postings are attracting the most interest.
+      Use these insights to optimize your postings and improve hiring efficiency.
+    </p>
+  </div>
+</div>

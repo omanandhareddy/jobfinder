@@ -1,0 +1,233 @@
+/* 💎 NEXT LEVEL NAVBAR */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 4rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease-in-out;
+}
+
+/* ✨ LOGO */
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #3f37c9, #4361ee, #4895ef);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* 🧭 NAV LINKS */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  position: relative;
+}
+
+/* Modern buttons */
+.nav-links button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.05rem;
+  position: relative;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: all 0.4s ease;
+  padding: 0.4rem 0;
+  text-transform: capitalize;
+}
+
+/* Button hover effect — glowing underline */
+.nav-links button::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #4361ee, #4cc9f0);
+  border-radius: 5px;
+  transition: width 0.4s ease;
+}
+
+.nav-links button:hover::after {
+  width: 100%;
+}
+
+.nav-links button:hover {
+  color: #4cc9f0;
+  transform: translateY(-2px);
+}
+
+/* Active link indicator (optional if you handle route active) */
+.nav-links button.active {
+  color: #4cc9f0;
+}
+.nav-links button.active::after {
+  width: 100%;
+}
+
+/* 🌙 Glass floating effect with dark overlay */
+.navbar::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  z-index: -1;
+  border-radius: 0 0 20px 20px;
+}
+
+/* 🪄 Optional floating animation when scrolling */
+.navbar.scrolled {
+  background: rgba(30, 30, 50, 0.6);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 5px 30px rgba(67, 97, 238, 0.25);
+  transition: all 0.4s ease;
+}
+
+/* 🌈 RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+  .navbar {
+    padding: 1rem 2rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .logo {
+    font-size: 1.6rem;
+  }
+}
+/* ====== NOTIFICATION PAGE ====== */
+.noti-page {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  font-family: "Poppins", sans-serif;
+  color: #222;
+}
+
+.noti-page h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #2b2d42;
+  margin-bottom: 2rem;
+}
+
+/* ====== NOTIFICATION LIST ====== */
+.noti-page ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.noti-page li {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  animation: slideIn 0.5s ease;
+}
+
+/* 🪄 Hover effect */
+.noti-page li:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(67, 97, 238, 0.15);
+}
+
+/* Notification Text */
+.noti-page li span {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* Notification Date */
+.noti-page small {
+  font-size: 0.85rem;
+  color: #666;
+  background: #f1f3f6;
+  padding: 0.2rem 0.6rem;
+  border-radius: 6px;
+  align-self: center;
+}
+
+/* ====== NEW NOTIFICATION GLOW ====== */
+.noti-page li.new {
+  border-left: 5px solid #4361ee;
+  background: linear-gradient(90deg, rgba(67,97,238,0.05), #fff);
+  animation: newNotiPulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes newNotiPulse {
+  0% {
+    box-shadow: 0 0 0px rgba(67, 97, 238, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 15px rgba(67, 97, 238, 0.2);
+  }
+}
+
+/* ====== ANIMATION ====== */
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 600px) {
+  .noti-page li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .noti-page small {
+    align-self: flex-end;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: #f9fafc;
+  color: #1e1e1e;
+}

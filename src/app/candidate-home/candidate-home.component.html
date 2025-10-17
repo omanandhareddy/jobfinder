@@ -1,0 +1,47 @@
+<nav class="navbar">
+  <div class="logo" (click)="goTo('candidate-home')">JobFinder</div>
+  <div class="nav-links">
+    <button (click)="goTo('candidate-dashboard')">Dashboard</button>
+    <button (click)="goTo('candidate-jobs')">Find Jobs</button>
+    <button (click)="goTo('applied-jobs')">Applied Jobs</button>
+    <button (click)="goTo('notifications')">Notifications</button>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Welcome to <span>JobFinder</span></h1>
+    <p>Discover verified job opportunities, connect with employers, and start your career journey today.</p>
+    <button (click)="goTo('candidate-jobs')" class="explore-btn">Explore Jobs</button>
+  </div>
+  <img src="https://static.vecteezy.com/system/resources/previews/010/821/730/non_2x/search-job-find-vacancy-employment-go-to-career-people-seek-opportunity-for-vacancy-or-work-position-search-new-work-in-internet-illustration-vector.jpg" alt="Find Jobs" class="hero-img" />
+</section>
+
+<section class="about">
+  <div class="about-content">
+    <h2>Why Choose JobFinder?</h2>
+    <p>
+      JobFinder is your one-stop destination for career growth. Whether you’re a fresher or an experienced
+      professional, our platform helps you find jobs that fit your skills, interests, and goals — with verified
+      listings and real-time updates.
+    </p>
+
+    <div class="features">
+      <div class="feature">
+        <h3>Verified Employers</h3>
+        <p>We ensure every job listing is authentic and trustworthy.</p>
+      </div>
+
+      <div class="feature">
+        <h3>Smart Dashboard</h3>
+        <p>Manage your job applications and track interview status easily.</p>
+      </div>
+
+      <div class="feature">
+        <h3>Instant Alerts</h3>
+        <p>Get notified about the latest job openings in your field.</p>
+      </div>
+    </div>
+  </div>
+  <img src="http://st2.depositphotos.com/3591429/7712/i/450/depositphotos_77127743-Job-Search-Qualification-Concept.jpg" alt="About JobFinder" class="about-img" />
+</section>

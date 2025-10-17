@@ -1,0 +1,73 @@
+<nav class="navbar">
+  <div class="logo" (click)="goTo('candidate-home')">JobFinder</div>
+  <div class="nav-links">
+    <button (click)="goTo('candidate-dashboard')">Dashboard</button>
+    <button (click)="goTo('candidate-jobs')">Find Jobs</button>
+    <button (click)="goTo('applied-jobs')">Applied Jobs</button>
+    <button (click)="goTo('notifications')">Notifications</button>
+  </div>
+</nav>
+
+
+<div class="job-page">
+  <h2>Available Jobs</h2>
+  <input type="text" placeholder="Search job title..." [(ngModel)]="searchText" (input)="filterJobs()">
+  <select [(ngModel)]="selectedExp" (change)="filterJobs()">
+    <option value="">All Experience</option>
+    <option>0-2 years</option>
+    <option>2-5 years</option>
+    <option>5+ years</option>
+  </select>
+
+  <div class="job-list">
+    <div class="job-card" *ngFor="let job of filteredJobs">
+      <h3>{{ job.title }}</h3>
+      <p><b>Company:</b> {{ job.companyName }}</p>
+      <p><b>Location:</b> {{ job.location }}</p>
+      <p><b>Experience:</b> {{ job.experience }}</p>
+      <p><b>Salary:</b> {{ job.salary }}</p>
+      <button (click)="openApplyModal(job)">Apply</button>
+    </div>
+  </div>
+</div>
+
+<!-- Application Modal -->
+<div class="modal-overlay" *ngIf="showModal" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <h3>Apply for {{ selectedJob?.title }}</h3>
+    <form>
+      <div class="form-group">
+        <label>Candidate Name <span class="required">*</span></label>
+        <input type="text" [(ngModel)]="applicationForm.candidateName" name="candidateName" required>
+      </div>
+
+      <div class="form-group">
+        <label>Email Address <span class="required">*</span></label>
+        <input type="email" [(ngModel)]="applicationForm.email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label>Phone Number <span class="required">*</span></label>
+        <input type="tel" [(ngModel)]="applicationForm.phone" name="phone" required>
+      </div>
+
+      <div class="form-group">
+        <label>Resume Upload</label>
+        <input type="file" (change)="onFileSelect($event)" accept=".pdf,.doc,.docx">
+        <div class="file-name" *ngIf="applicationForm.resumeFileName">
+          {{ applicationForm.resumeFileName }}
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Cover Letter</label>
+        <textarea [(ngModel)]="applicationForm.coverLetter" name="coverLetter" rows="5" placeholder="Write your cover letter here..."></textarea>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn-cancel" (click)="closeModal()">Cancel</button>
+        <button type="button" class="btn-apply" (click)="submitApplication()">Apply</button>
+      </div>
+    </form>
+  </div>
+</div>

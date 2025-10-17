@@ -1,0 +1,44 @@
+<nav class="navbar">
+  <div class="logo" (click)="goTo('candidate-home')">JobFinder</div>
+  <div class="nav-links">
+    <button (click)="goTo('candidate-jobs')">Find Jobs</button>
+    <button (click)="goTo('applied-jobs')">Applied Jobs</button>
+    <button (click)="goTo('notifications')">Notifications</button>
+  </div>
+</nav>
+
+<section class="dashboard">
+  <div class="dashboard-header">
+    <h1>Welcome Back 👋</h1>
+    <p>Track your progress, manage applications, and stay updated on new job alerts.</p>
+  </div>
+
+  <div class="stats">
+    <div class="card gradient1">
+      <h3>Total Applied Jobs</h3>
+      <p>{{ appliedCount }}</p>
+      <span>Keep applying for more opportunities!</span>
+    </div>
+
+    <div class="card gradient2">
+      <h3>Notifications</h3>
+      <p>{{ notificationsCount }}</p>
+      <span>Stay tuned for latest job updates.</span>
+    </div>
+
+    <div class="card gradient3">
+      <h3>Profile Strength</h3>
+      <p>85%</p>
+      <span>Complete your profile to attract recruiters.</span>
+    </div>
+  </div>
+
+  <div class="dashboard-info">
+    <h2>About Your Dashboard</h2>
+    <p>
+      Your dashboard is your personal space to track applications, manage job alerts, and monitor your
+      overall progress. Every job you apply for is tracked here, and you’ll get instant notifications whenever
+      there’s a new update. Keep your profile strong and active to boost your visibility among recruiters!
+    </p>
+  </div>
+</section>
