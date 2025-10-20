@@ -236,8 +236,7 @@ body {
   margin-top: 1.5rem;
 }
 
-.btn-cancel,
-.btn-apply {
+.btn-cancel{
   flex: 1;
   margin: 0 0.3rem;
   padding: 0.8rem;
@@ -253,18 +252,13 @@ body {
   color: #333;
 }
 
-.btn-apply {
-  background: #4361ee;
-  color: #fff;
-}
+
 
 .btn-cancel:hover {
   background: #d4d4d4;
 }
 
-.btn-apply:hover {
-  background: #3652d9;
-}
+
 
 @keyframes fadeIn {
   from {
