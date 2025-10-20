@@ -19,7 +19,7 @@ body {
   overflow-x: hidden;
 }
 
-/* ================= NAVBAR ================= */
+
 .navbar {
   width: 100%;
   position: sticky;
@@ -100,7 +100,7 @@ body {
   width: 100%;
 }
 
-/* ================= HERO ================= */
+
 .hero {
   padding: 6rem 2rem;
   display: flex;
@@ -153,7 +153,6 @@ body {
   box-shadow: 0 8px 20px rgba(244, 185, 66, 0.4);
 }
 
-/* ================= ABOUT ================= */
 .about {
   background: #fff;
   border-radius: 20px;
@@ -211,7 +210,6 @@ body {
   line-height: 1.5;
 }
 
-/* ================= FOOTER ================= */
 .footer {
   text-align: center;
   padding: 2rem;
@@ -221,7 +219,7 @@ body {
   background: white;
 }
 
-/* ================= RESPONSIVE ================= */
+
 @media (max-width: 900px) {
   .navbar {
     flex-direction: column;
