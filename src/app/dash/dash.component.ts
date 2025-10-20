@@ -1,14 +1,14 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-candidate-dashboard',
+  selector: 'app-dash',
   imports: [],
-  templateUrl: './candidate-dashboard.component.html',
-  styleUrl: './candidate-dashboard.component.css'
+  templateUrl: './dash.component.html',
+  styleUrl: './dash.component.css'
 })
-export class CandidateDashboardComponent implements OnInit{
+export class DashComponent {
 appliedCount = 0;
   notificationsCount = 0;
   user: any;
@@ -33,5 +33,4 @@ appliedCount = 0;
   goTo(path: string) {
     this.router.navigate([path]);
   }
-
 }
