@@ -29,11 +29,11 @@
         </td>
         <td>{{ jobsMap[a.jobId]?.title }}</td>
         <td>{{ a.phone || 'N/A' }}</td>
-        <td>{{ a.resumeFileName || 'N/A' }}</td>
+        <td> <button class="btn-view" (click)="viewDetails(a)">View</button></td>
         <td>{{ a.appliedDate | date:'short' }}</td>
         <td>{{ a.status }}</td>
         <td>
-          <button class="btn-view" (click)="viewDetails(a)">View</button>
+         
           <select (change)="changeStatus(a, $any($event.target).value)" [value]="a.status">
             <option>Applied</option>
             <option>Reviewed</option>

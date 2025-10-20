@@ -1,5 +1,8 @@
 <nav class="navbar">
-  <div class="logo" (click)="goTo('candidate-home')">JobFinder</div>
+  <div class="nav-left">
+    <h1 class="logo" (click)="goTo('home')">JobFinder</h1>
+  </div>
+
   <div class="nav-links">
     <button (click)="goTo('candidate-dashboard')">Dashboard</button>
     <button (click)="goTo('candidate-jobs')">Find Jobs</button>
@@ -11,37 +14,41 @@
 <section class="hero">
   <div class="hero-content">
     <h1>Welcome to <span>JobFinder</span></h1>
-    <p>Discover verified job opportunities, connect with employers, and start your career journey today.</p>
-    <button (click)="goTo('candidate-jobs')" class="explore-btn">Explore Jobs</button>
+    <p>
+      Discover verified job opportunities, connect with top employers, and start your career journey
+      confidently — all in one clean, fast, and smart platform.
+    </p>
+    <button class="explore-btn" (click)="goTo('candidate-jobs')">Explore Jobs</button>
   </div>
-  <img src="https://static.vecteezy.com/system/resources/previews/010/821/730/non_2x/search-job-find-vacancy-employment-go-to-career-people-seek-opportunity-for-vacancy-or-work-position-search-new-work-in-internet-illustration-vector.jpg" alt="Find Jobs" class="hero-img" />
 </section>
 
 <section class="about">
   <div class="about-content">
     <h2>Why Choose JobFinder?</h2>
     <p>
-      JobFinder is your one-stop destination for career growth. Whether you’re a fresher or an experienced
-      professional, our platform helps you find jobs that fit your skills, interests, and goals — with verified
-      listings and real-time updates.
+      Whether you’re just starting out or leveling up, JobFinder helps you find the right fit — with verified
+      companies, easy applications, and real-time updates designed for your success.
     </p>
 
     <div class="features">
       <div class="feature">
         <h3>Verified Employers</h3>
-        <p>We ensure every job listing is authentic and trustworthy.</p>
+        <p>Every job listing is thoroughly verified to ensure trust and safety.</p>
       </div>
 
       <div class="feature">
         <h3>Smart Dashboard</h3>
-        <p>Manage your job applications and track interview status easily.</p>
+        <p>Track applications, interview status, and updates all in one clean view.</p>
       </div>
 
       <div class="feature">
         <h3>Instant Alerts</h3>
-        <p>Get notified about the latest job openings in your field.</p>
+        <p>Stay informed with timely notifications about new job openings.</p>
       </div>
     </div>
   </div>
-  <img src="http://st2.depositphotos.com/3591429/7712/i/450/depositphotos_77127743-Job-Search-Qualification-Concept.jpg" alt="About JobFinder" class="about-img" />
 </section>
+
+<footer class="footer">
+  <p>© 2025 JobFinder. Empowering Careers & Companies Worldwide.</p>
+</footer>
