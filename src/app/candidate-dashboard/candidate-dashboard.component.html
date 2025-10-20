@@ -1,10 +1,6 @@
 <nav class="navbar">
-  <div class="nav-left">
-    <h1 class="logo" (click)="goTo('home')">JobFinder</h1>
-  </div>
-
+  <div class="logo" (click)="goTo('candidate-home')">JobFinder</div>
   <div class="nav-links">
-    <button (click)="goTo('candidate-dashboard')" class="active">Dashboard</button>
     <button (click)="goTo('candidate-jobs')">Find Jobs</button>
     <button (click)="goTo('applied-jobs')">Applied Jobs</button>
     <button (click)="goTo('notifications')">Notifications</button>
@@ -13,7 +9,7 @@
 
 <section class="dashboard">
   <div class="dashboard-header">
-    <h1>Welcome Back </h1>
+    <h1>Welcome Back</h1>
     <p>Track your progress, manage applications, and stay updated on new job alerts.</p>
   </div>
 

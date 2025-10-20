@@ -308,3 +308,21 @@ body {
   background: #f9fafc;
   color: #1e1e1e;
 }
+.role-btn {
+  border: none;
+  border-radius: 10px;
+  padding: 10px 22px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.role-btn.candidate {
+  background: #222;
+  color: #f8f8f8;
+}
+
+.role-btn:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
+}

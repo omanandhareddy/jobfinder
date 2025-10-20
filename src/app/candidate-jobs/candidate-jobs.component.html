@@ -30,7 +30,7 @@
       <p><b>Location:</b> {{ job.location }}</p>
       <p><b>Experience:</b> {{ job.experience }}</p>
       <p><b>Salary:</b> {{ job.salary }}</p>
-      <button (click)="openApplyModal(job)">Apply</button>
+      <button (click)="openApplyModal(job)" class="role-btn candidate" >Apply</button>
     </div>
   </div>
 </div>
@@ -69,7 +69,7 @@
 
       <div class="modal-actions">
         <button type="button" class="btn-cancel" (click)="closeModal()">Cancel</button>
-        <button type="button" class="btn-apply" (click)="submitApplication()">Apply</button>
+        <button type="button" class="role-btn candidate"  (click)="submitApplication()">Apply</button>
       </div>
     </form>
   </div>
