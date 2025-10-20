@@ -1,29 +1,31 @@
-/* 💎 NEXT LEVEL NAVBAR */
+
 .navbar {
+  width: 100%;
   position: sticky;
   top: 0;
-  width: 100%;
-  z-index: 1000;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(15px);
   padding: 1rem 4rem;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s ease-in-out;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+  transition: all 0.3s ease;
 }
 
-/* ✨ LOGO */
+.navbar:hover {
+  background: rgba(255, 255, 255, 0.85);
+}
+
 .logo {
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  background: linear-gradient(90deg, #3f37c9, #4361ee, #4895ef);
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #1a1a1a, #444);
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: transparent;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
@@ -32,92 +34,51 @@
   transform: scale(1.05);
 }
 
-/* 🧭 NAV LINKS */
 .nav-links {
   display: flex;
   align-items: center;
   gap: 2rem;
-  position: relative;
 }
 
-/* Modern buttons */
 .nav-links button {
   background: none;
   border: none;
-  color: #fff;
-  font-weight: 500;
-  font-size: 1.05rem;
+  color: #1e1e1e;
+  font-weight: 600;
+  font-size: 1rem;
   position: relative;
   cursor: pointer;
-  letter-spacing: 0.5px;
-  transition: all 0.4s ease;
-  padding: 0.4rem 0;
-  text-transform: capitalize;
+  padding: 0.3rem 0;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
 }
 
-/* Button hover effect — glowing underline */
 .nav-links button::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: -4px;
   width: 0%;
   height: 2px;
-  background: linear-gradient(90deg, #4361ee, #4cc9f0);
-  border-radius: 5px;
-  transition: width 0.4s ease;
+  background: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+.nav-links button:hover {
+  color: var(--accent-color);
 }
 
 .nav-links button:hover::after {
   width: 100%;
 }
 
-.nav-links button:hover {
-  color: #4cc9f0;
-  transform: translateY(-2px);
-}
-
-/* Active link indicator (optional if you handle route active) */
 .nav-links button.active {
-  color: #4cc9f0;
+  color: var(--accent-color);
 }
 .nav-links button.active::after {
   width: 100%;
 }
 
-/* 🌙 Glass floating effect with dark overlay */
-.navbar::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.25);
-  z-index: -1;
-  border-radius: 0 0 20px 20px;
-}
-
-/* 🪄 Optional floating animation when scrolling */
-.navbar.scrolled {
-  background: rgba(30, 30, 50, 0.6);
-  backdrop-filter: blur(30px);
-  box-shadow: 0 5px 30px rgba(67, 97, 238, 0.25);
-  transition: all 0.4s ease;
-}
-
-/* 🌈 RESPONSIVE DESIGN */
-@media (max-width: 900px) {
-  .navbar {
-    padding: 1rem 2rem;
-  }
-
-  .nav-links {
-    display: none;
-  }
-
-  .logo {
-    font-size: 1.6rem;
-  }
-}
-/* ====== GLOBAL STYLING ====== */
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -125,7 +86,6 @@ body {
   color: #222;
 }
 
-/* ====== JOB PAGE ====== */
 .job-page {
   max-width: 1200px;
   margin: 2rem auto;
@@ -164,7 +124,6 @@ body {
   gap: 1.5rem;
 }
 
-/* ====== JOB CARD ====== */
 .job-card {
   background: #fff;
   padding: 1.5rem;
@@ -205,7 +164,6 @@ body {
   background: #3652d9;
 }
 
-/* ====== MODAL OVERLAY ====== */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -217,7 +175,7 @@ body {
   animation: fadeIn 0.3s ease forwards;
 }
 
-/* ====== MODAL CONTENT ====== */
+
 .modal-content {
   background: #fff;
   padding: 2rem 2.5rem;
@@ -236,7 +194,7 @@ body {
   text-align: center;
 }
 
-/* ====== FORM FIELDS ====== */
+
 .form-group {
   margin-bottom: 1rem;
 }
@@ -271,7 +229,7 @@ body {
   margin-top: 0.3rem;
 }
 
-/* ====== MODAL BUTTONS ====== */
+
 .modal-actions {
   display: flex;
   justify-content: space-between;
@@ -308,7 +266,6 @@ body {
   background: #3652d9;
 }
 
-/* ====== ANIMATIONS ====== */
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -329,7 +286,6 @@ body {
   }
 }
 
-/* ====== RESPONSIVE ====== */
 @media (max-width: 600px) {
   .job-page input,
   .job-page select {
